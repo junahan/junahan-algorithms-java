@@ -126,7 +126,7 @@ public class ArrayUtilTest {
   }
 
   private Elem[] genTestData(int minKey, int maxKey, int size) {
-    List<TestElem> elems = TestUtil.genTestElems(minKey,maxKey, size);
+    List<Elem> elems = TestUtil.genTestElems(minKey,maxKey, size);
     Elem[] array = new Elem[elems.size()];
     elems.toArray(array);
     return array;

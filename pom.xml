@@ -5,9 +5,9 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.junahan</groupId>
-  <artifactId>misc</artifactId>
+  <artifactId>learning-alg</artifactId>
   <name>${project.artifactId}</name>
-  <description>MISC</description>
+  <description>learning algorithms</description>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
@@ -69,6 +69,33 @@
   <build>
     <plugins>
       <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>${maven.resources.version}</version>
+        <executions>
+          <execution>
+            <id>copy-resources</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>target/classes</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>src/main/resources</directory>
+                  <filtering>true</filtering>
+                  <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.properties</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>${maven.compiler.version}</version>
@@ -108,6 +135,32 @@
           <goals>deploy</goals>
         </configuration>
       </plugin>
+
+<!--      <plugin>-->
+<!--        <groupId>org.apache.maven.plugins</groupId>-->
+<!--        <artifactId>maven-javadoc-plugin</artifactId>-->
+<!--        <version>${maven.javadoc.version}</version>-->
+<!--        <executions>-->
+<!--          <execution>-->
+<!--            <id>attach-javadoc</id>-->
+<!--            <goals>-->
+<!--              <goal>jar</goal>-->
+<!--            </goals>-->
+<!--            <configuration>-->
+<!--              <doclint>none</doclint>-->
+<!--            </configuration>-->
+<!--          </execution>-->
+<!--        </executions>-->
+<!--        <configuration>-->
+<!--          <show>public</show>-->
+<!--          <charset>UTF-8</charset>-->
+<!--          <encoding>UTF-8</encoding>-->
+<!--          <docencoding>UTF-8</docencoding>-->
+<!--          <links>-->
+<!--            <link>http://docs.oracle.com/javase/8/docs/api</link>-->
+<!--          </links>-->
+<!--        </configuration>-->
+<!--      </plugin>-->
     </plugins>
   </build>
 </project>

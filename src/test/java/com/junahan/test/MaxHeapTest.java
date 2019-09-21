@@ -13,7 +13,7 @@ public class MaxHeapTest {
 
   @Test
   public void removeMaxTest() {
-    List<TestElem> elems = TestUtil.genTestElems(0,8, 9);
+    List<Elem> elems = TestUtil.genTestElems(0,8, 9);
     elems.add(new TestElem(100, UUID.randomUUID()));
     Elem[] heap = new Elem[elems.size()];
     elems.toArray(heap);
@@ -28,7 +28,7 @@ public class MaxHeapTest {
 
   @Test
   public void removeTest() {
-    List<TestElem> elems = TestUtil.genTestElems(0,8, 10);
+    List<Elem> elems = TestUtil.genTestElems(0,8, 10);
     Elem[] heap = new Elem[elems.size()];
     elems.toArray(heap);
 

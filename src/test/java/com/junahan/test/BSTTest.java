@@ -17,7 +17,7 @@ public class BSTTest {
   @Test
   public void insertTest() {
     BST bst = new BST();
-    List<TestElem> tests = TestUtil.genTestElems(10, 30, 10);
+    List<Elem> tests = TestUtil.genTestElems(10, 30, 10);
     TestElem min = new TestElem(0, UUID.randomUUID());
     TestElem max = new TestElem(100, UUID.randomUUID());
     tests.add(min);
@@ -27,9 +27,8 @@ public class BSTTest {
     }
     assertTrue(!bst.isEmpty());
     bst.print();
-    TestElem  element = bst.find(min.key());
+    Elem  element = bst.find(min.key());
     //    TestElem elemet2 = bst.
-
     assertNotNull(element);
     assertEquals(min, element);
     element = bst.find(max.key());
